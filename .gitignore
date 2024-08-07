@@ -1,0 +1,7 @@
+.git
+.idea
+.vs
+TypeTriangle/bin
+TypeTriangle/obj
+TypeTriangleTest/bin
+TypeTriangleTest/obj

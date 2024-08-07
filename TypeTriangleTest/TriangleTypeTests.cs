@@ -7,13 +7,13 @@ namespace TypeTriangleTest
         private readonly ITriangleType _triangleType = new TriangleType();
 
         [Theory]
-        [InlineData(new double[] { 3.0, 4.0, 5.0 }, TriangleKind.Right)]
-        [InlineData(new double[] { 7.0, 24.0, 25.0 }, TriangleKind.Right)]
-        [InlineData(new double[] { 5.0, 5.0, 5.0 }, TriangleKind.Acute)]
-        [InlineData(new double[] { 3.0, 4.0, 6.0 }, TriangleKind.Obtuse)]
-        [InlineData(new double[] { 5.0, 12.0, 13.0 }, TriangleKind.Right)]
+        [InlineData(new double[] { 3.0, 4.0, 5.0 }, 2)]
+        [InlineData(new double[] { 7.0, 24.0, 25.0 }, 2)]
+        [InlineData(new double[] { 5.0, 5.0, 5.0 }, 1)]
+        [InlineData(new double[] { 3.0, 4.0, 6.0 }, 3)]
+        [InlineData(new double[] { 5.0, 12.0, 13.0 }, 2)]
         public void DetermineTriangleType_ValidTriangles_ReturnsCorrectType(double[] sides,
-            TriangleKind expected)
+            int expected)
         {
             var result = _triangleType.DetermineTriangleType(sides);
             Assert.Equal(expected, result);

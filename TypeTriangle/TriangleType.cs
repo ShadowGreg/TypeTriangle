@@ -1,14 +1,18 @@
 namespace TypeTriangle
 {
-    public class TriangleType : ITriangleType
+    public struct TriangleType : ITriangleType
     {
         /// <summary>
         /// Определяет тип треугольника (остроугольный, прямоугольный, тупоугольный) по длинам его сторон.
         /// </summary>
         /// <param name="args">Массив, содержащий три стороны треугольника.</param>
-        /// <returns>Тип треугольника (остроугольный, прямоугольный, тупоугольный).</returns>
+        /// <returns>Тип треугольника (остроугольный, прямоугольный, тупоугольный).  
+        ///1, Остроугольный TriangleKind.Acute
+        ///2, // Прямоугольный TriangleKind.Right
+        ///3, // Тупоугольный TriangleKind.Obtuse
+        ///</returns>
         /// <exception cref="ArgumentException">Выбрасывается, если массив не содержит ровно три стороны или стороны не образуют треугольник.</exception>
-        public TriangleKind DetermineTriangleType(double[] args)
+        public int DetermineTriangleType(double[] args)
         {
             if (args.Length != 3)
             {
@@ -53,9 +57,9 @@ namespace TypeTriangle
             // Используем switch для определения типа треугольника
             return difference switch
             {
-                > 0 => TriangleKind.Acute, // Остроугольный
-                0 => TriangleKind.Right, // Прямоугольный
-                < 0 => TriangleKind.Obtuse, // Тупоугольный
+                > 0 => 1, // Остроугольный TriangleKind.Acute
+                0 => 2, // Прямоугольный TriangleKind.Right
+                < 0 => 3, // Тупоугольный TriangleKind.Obtuse
             };
         }
     }

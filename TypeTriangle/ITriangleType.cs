@@ -7,6 +7,6 @@ namespace TypeTriangle
         /// </summary>
         /// <param name="args">Массив, содержащий три стороны треугольника.</param>
         /// <returns>Тип треугольника (остроугольный, прямоугольный, тупоугольный).</returns>
-        TriangleKind DetermineTriangleType(double[] args);
+        int DetermineTriangleType(double[] args);
     }
 }
